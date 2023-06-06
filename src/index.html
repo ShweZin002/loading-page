@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- meta tag -->
+    <!-- Primary Meta Tags -->
+    <title>Vanilla</title>
+    <meta name="title" content="Vanilla">
+    <link rel="icon" href="">
+    <meta name="description" content="Tailwind testing">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/">
+    <meta property="twitter:title" content="Vanilla">
+    <meta property="twitter:description" content="Tailwind testing">
+    <meta property="twitter:image" content="../assets/image/vanilla.png">
+
+
+    <!-- dark mode -->
+    <meta name="theme-color" content="dark:bg-slate-900">
+
+    <style>
+        .loader {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #ff3d00 100%);
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        
+        .loader::after {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #263238;
+        }
+        
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+        
+        * {
+            font-family: 'Lobster', cursive;
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+</head>
+
+<body class="dark:bg-slate-950">
+    <!-- loading -->
+    <div class="loading w-full h-full fixed top-0 left-0 bg-white z-20 flex justify-center items-center">
+        <span class="loader"></span>
+    </div>
+
+    <!-- navbar -->
+    <div class="bg-green-500 duration-200 animate__animated navbar dark:bg-slate-950 z-50">
+        <div class="flex justify-between container mx-auto md:px-5 lg:px-32 items-center ">
+            <div class="scale-50 md:scale-100">
+                <!-- logo brand to put-->
+            </div>
+            <div id="" class="mobile flex h-screen bg-slate-200 md:bg-transparent top-0 -left-full z-10 w-full fixed  justify-center items-center md:static md:h-auto  duration-300">
+                <div id="" class="closemenu absolute top-3 left-3 w-5 h-5 border rounded-full flex justify-center items-center md:hidden">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul class="md:flex md:space-x-3 space-y-5 md:space-y-0 text-2xl md:text-base">
+                    <li><a href="#home" class="text-slate-900 font-bold mobile-close lg:text-slate-200 active-link">Home</a> </li>
+                    <li><a href="#chat" class="text-slate-900 font-bold mobile-close lg:text-slate-200">Chat</a> </li>
+                    <li><a href="#device" class="text-slate-900 font-bold mobile-close lg:text-slate-200">Device</a></li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center scale-50 md:scale-100">
+                <button id="dark-switch" onclick="toggleTheme()" class="shadow w-[72px] flex items-center transition duration-200 rounded-full m-5 bg-slate-800 p-1">
+                <div id="dark-switch-icon" class="bg-slate-50 w-8 h-8 rounded-full transform transition duration-200 flex justify-center items-center">
+                    <i class="fa-regular fa-sun"></i>
+                </div>
+                <h6 id="dark-text" class="text-slate-200 dark:text-slate-900 translate-x-1">FF</h6>
+            </button>
+                <div class="md:hidden mobile-menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hero section -->
+    <section class="bg-green-500 py-40 dark:bg-slate-900" id="home">
+        <div class="text-center px-5">
+            <h1 class="text-4xl font-bold mb-5 text-slate-100 headline">IMAGINE A PLACE....</h1>
+            <p class="text-slate-500 mb-10 md:max-w-xl max-w-sm mx-auto headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos veniam voluptates ut possimus dolor necessitatibus officia exercitationem dolorem nobis libero atque commodi labore saepe, eius consectetur omnis non perspiciatis consequatur animi.
+                Necessitatibus temporibus laudantium dolore ipsa harum ullam voluptate reiciendis ea culpa dignissimos illum beatae, quisquam facilis sequi! Eveniet, nulla.</p>
+            <div class="space-x-0 space-y-3 md:space-x-4 md:space-y-0">
+                <button class="bg-slate-200 px-10 py-3 rounded-full text-green-500 headline">
+                   <i class="fa-solid fa-download"></i> <span> Download Now</span>
+                </button>
+                <button class="bg-slate-900 px-10 py-3 rounded-full text-white headline">
+                    <i class="fa-solid fa-cart-shopping"></i><span> Order Now</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!--first Chat section -->
+    <section id="chat">
+        <div class="space-y-10 px-5 grid md:grid-cols-2 items-center md:space-x-10 my-40 container mx-auto lg:px-32 ">
+
+            <!-- card chat -->
+            <div class="shadow-lg rounded-3xl p-5 headline">
+                <h1 class="text-3xl font-bold mb-3 dark:text-slate-200">Chats</h1>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- chat content -->
+            <div class="text-center md:text-left headline">
+                <h1 class="text-3xl mb-5 text-slate-900 font-bold dark:text-slate-200">Create an invite only place where you belong</h1>
+                <p class="text-slate-500 max-w-sm md:max-w-lg mx-auto lg:ml-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint magnam dolore inventore minima, vitae repellendus tempore autem quis voluptatibus fuga?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- second chat section -->
+    <section class="bg-slate-100 py-40 dark:bg-slate-900">
+        <div class="space-y-10 px-5 grid md:grid-cols-2 items-center md:space-x-10 container mx-auto lg:px-32">
+
+            <!-- chat content -->
+            <div class="text-center md:text-right headline">
+                <h1 class="text-3xl mb-5 text-slate-900 font-bold dark:text-slate-200">Create an invite only place where you belong</h1>
+                <p class="text-slate-500 max-w-sm md:max-w-lg mx-auto lg:mr-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint magnam dolore inventore minima, vitae repellendus tempore autem quis voluptatibus fuga?</p>
+            </div>
+
+            <!-- card chat -->
+            <div class="shadow-lg rounded-3xl p-5 bg-white headline dark:bg-slate-600">
+                <h1 class="text-3xl font-bold mb-3 dark:text-slate-200">Chats</h1>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3 dark:border-slate-700">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--third Chat section -->
+    <section>
+        <div class="space-y-10 px-5 grid md:grid-cols-2 items-center md:space-x-10 my-40 container mx-auto lg:px-32">
+
+            <!-- card chat -->
+            <div class="shadow-lg rounded-3xl p-5 headline">
+                <h1 class="text-3xl font-bold mb-3 dark:text-slate-200">Chats</h1>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 border rounded-2xl p-3">
+                        <div class="bg-green-500 w-10 h-10 flex justify-center items-center rounded-full text-white">
+                            <i class="fa-solid fa-power-off"></i>
+                        </div>
+                        <div class="">
+                            <h3 class="font-bold dark:text-slate-400">#Tailwindcss</h3>
+                            <h6 class="text-green-500">Nway Oo:Thank for everything.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- chat content -->
+            <div class="text-center md:text-left headline">
+                <h1 class="text-3xl mb-5 text-slate-900 font-bold dark:text-slate-200">Create an invite only place where you belong</h1>
+                <p class="text-slate-500 max-w-sm md:max-w-lg mx-auto lg:mr-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint magnam dolore inventore minima, vitae repellendus tempore autem quis voluptatibus fuga?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- device section -->
+    <section class="bg-slate-100 py-40 dark:bg-slate-900" id="device">
+        <div class="mx-auto container text-center space-y-20 px-5 md:px-0 lg:px-32 mb-10">
+            <div class="">
+                <h1 class="text-3xl font-bold max-w-sm mx-auto md:max-w-full mb-3 text-slate-900 headline dark:text-slate-200">RELIABLE TECH FOR STAYING CLOSE</h1>
+                <p class="md:max-w-2xl mx-auto text-slate-500 headline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias ratione, dolorum totam repellendus molestiae in officiis similique nobis maiores odit!</p>
+            </div>
+            <div class="headline">
+                SVG device
+            </div>
+            <div class="">
+                <h1 class="text-3xl font-bold max-w-sm mx-auto md:max-w-full mb-3 text-slate-900 headline">Ready to start your journy</h1>
+                <button class="bg-green-500 px-10 py-3 rounded-full text-white headline">
+                   <i class="fa-solid fa-download"></i> <span> Download Now</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer class="bg-slate-900 py-28 space-y-16">
+        <div class="container mx-auto
+          grid grid-cols-2 gap-10 px-5 md:grid-cols-5 lg:px-32">
+            <div class="text-4xl font-bold col-span-2 text-slate-200 md:col-span-1 headline">
+                IMAGINE A PLACE
+            </div>
+            <div class="headline">
+                <h4 class="font-bold mb-1 text-slate-300">Product</h4>
+                <ul class="space-y-1 text-slate-400">
+                    <li>Download</li>
+                    <li>Status</li>
+                </ul>
+            </div>
+            <div class="headline">
+                <h4 class="font-bold mb-1 text-slate-300">Product</h4>
+                <ul class="space-y-1 text-slate-400">
+                    <li>Download</li>
+                    <li>Status</li>
+                    <li>Download</li>
+                    <li>Status</li>
+                    <li>Download</li>
+                    <li>Status</li>
+                </ul>
+            </div>
+            <div class="headline">
+                <h4 class="font-bold mb-1 text-slate-300">Product</h4>
+                <ul class="space-y-1 text-slate-400">
+                    <li>Download</li>
+                    <li>Status</li>
+                    <li>Download</li>
+                    <li>Status</li>
+                </ul>
+            </div>
+            <div class="headline">
+                <h4 class="font-bold mb-1 text-slate-300">Product</h4>
+                <ul class="space-y-1 text-slate-400">
+                    <li>Download</li>
+                    <li>Status</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto headline">
+            <hr>
+        </div>
+        <div class="container mx-auto flex justify-between px-5">
+            <h1 class="text-4xl font-bold text-slate-200 headline">Vanilla</h1>
+            <button class="bg-green-500 px-10 py-3 rounded-full text-white headline">
+                    <span>Sign up</span>
+            </button>
+        </div>
+    </footer>
+
+
+
+    <!-- script tags -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector(".loading").style.display = "none";
+        })
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../assets/js/darkmode.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
